@@ -1,0 +1,16 @@
+{
+  "name": "pgats-desafio-programacao-automacao-testes-2",
+  "version": "1.0.0",
+  "description": "Desafio da materia Programação para automação de testes - Pós Graduação em Automação de testes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^11.7.5"
+  }
+}
