@@ -42,12 +42,12 @@ jobs:
 
       # Instala dependências
       - name: Install dependencies
-        run: npm ci
+        run: npm instal
 
 
       # Executa testes
       - name: Run tests
-        run: npm test
+        run: npx mocha
 
 
       # Publica relatório
