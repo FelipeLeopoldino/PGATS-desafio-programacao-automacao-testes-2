@@ -4,7 +4,7 @@
   "description": "Desafio da materia Programação para automação de testes - Pós Graduação em Automação de testes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.test.js ---reporter mocha-junit-reporter"
+    "test": "mocha test/*.test.js --reporter mocha-junit-reporter"
   },
   "keywords": [],
   "type": "module",
