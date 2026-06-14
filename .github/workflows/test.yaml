@@ -1,7 +1,10 @@
 name: Node Tests Pipeline
 
-on:
+permissions:
+  contents: read
+  checks: write
 
+on:
   # Executa no push
   push:
     branches:
@@ -12,7 +15,6 @@ on:
 
   # Execução agendada
   schedule:
-    # Todos os dias às 08:00 UTC
     - cron: "0 22 * * *"
 
 
@@ -20,37 +22,28 @@ jobs:
 
   test:
 
-    name: Run Mocha Tests
-
     runs-on: ubuntu-latest
-
 
     steps:
 
-      # Checkout do código
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
 
-      # Configura Node
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
 
-      # Instala dependências
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
 
-      # Executa testes
       - name: Run tests
-        run: npm rum test
+        run: npm test
 
 
-      # Publica relatório
       - name: Publish Test Results
         if: always()
         uses: dorny/test-reporter@v1
