@@ -13,7 +13,7 @@ on:
   # Execução agendada
   schedule:
     # Todos os dias às 08:00 UTC
-    - cron: "0 8 * * *"
+    - cron: "0 22 * * *"
 
 
 jobs:
