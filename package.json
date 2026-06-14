@@ -4,13 +4,14 @@
   "description": "Desafio da materia Programação para automação de testes - Pós Graduação em Automação de testes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/**/*.test.js --reporter mochawesome"
   },
   "keywords": [],
   "type": "module",
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mocha": "^11.7.5"
+  "devDependencies": {
+    "mocha": "^11.7.6",
+    "mochawesome": "^7.1.4"
   }
 }

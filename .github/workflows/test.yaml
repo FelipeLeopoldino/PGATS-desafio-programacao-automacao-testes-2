@@ -1,0 +1,59 @@
+name: Node Tests Pipeline
+
+on:
+
+  # Executa no push
+  push:
+    branches:
+      - master
+
+  # Execução manual pelo GitHub
+  workflow_dispatch:
+
+  # Execução agendada
+  schedule:
+    # Todos os dias às 08:00 UTC
+    - cron: "0 8 * * *"
+
+
+jobs:
+
+  test:
+
+    name: Run Mocha Tests
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      # Checkout do código
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # Configura Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+
+      # Instala dependências
+      - name: Install dependencies
+        run: npm ci
+
+
+      # Executa testes
+      - name: Run tests
+        run: npm test
+
+
+      # Publica relatório
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mocha-test-report
+          path: mochawesome-report/
