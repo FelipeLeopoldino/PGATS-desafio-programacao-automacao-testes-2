@@ -15,8 +15,7 @@ on:
 
   # Execução agendada
   schedule:
-    - cron: "*/5 * * * *"
-
+  - cron: '*/5 * * * *'
 
 jobs:
 
