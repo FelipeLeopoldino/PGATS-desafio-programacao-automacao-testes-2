@@ -47,7 +47,7 @@ jobs:
 
       # Executa testes
       - name: Run tests
-        run: npx mocha
+        run: npm rum test
 
 
       # Publica relatório
