@@ -42,7 +42,7 @@ jobs:
 
       # Instala dependências
       - name: Install dependencies
-        run: npm instal
+        run: npm ci
 
 
       # Executa testes
@@ -51,9 +51,10 @@ jobs:
 
 
       # Publica relatório
-      - name: Upload test report
+      - name: Publish Test Results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: dorny/test-reporter@v1
         with:
-          name: mocha-test-report
-          path: mochawesome-report/
+          name: Mocha Tests
+          path: test-results.xml
+          reporter: java-junit
