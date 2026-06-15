@@ -12,10 +12,11 @@ on:
 
   # Execução manual pelo GitHub
   workflow_dispatch:
-
+# Executa todos os dias às 19:00 (horário de Brasília UTC-3)
+# GitHub Actions utiliza UTC, por isso 22:00
   # Execução agendada
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '0 22 0 0 0'
 
 jobs:
 
