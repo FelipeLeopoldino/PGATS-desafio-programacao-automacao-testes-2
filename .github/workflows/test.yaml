@@ -16,7 +16,7 @@ on:
 # GitHub Actions utiliza UTC, por isso 22:00
   # Execução agendada
   schedule:
-  - cron: '0 22 0 0 0'
+    - cron: "0 10 * * *"
 
 jobs:
 
